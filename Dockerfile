@@ -1,7 +1,7 @@
 FROM openjdk:11-jre-slim
 
-ARG kafka_version=2.8.1
-ARG scala_version=2.13
+ARG kafka_version=2.4.1
+ARG scala_version=2.12
 ARG vcs_ref=unspecified
 ARG build_date=unspecified
 
@@ -54,7 +54,7 @@ RUN set -eux ; \
 
 COPY overrides /opt/overrides
 
-VOLUME ["/kafka"]
+# VOLUME ["/kafka"]
 
 # Use "exec" form so that it runs as PID 1 (useful for graceful shutdown)
 CMD ["start-kafka.sh"]
